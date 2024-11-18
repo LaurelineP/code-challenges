@@ -1,0 +1,22 @@
+name: GitHub Actions Demo
+run-name: ${{ github.actor }} Tests on inner python challenges 🧪
+on: [push]
+jobs:
+  Python-Tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo "🔎 ${{ github.event_name }} \nBranch name:${{ github.ref }}\nRepository ${{ github.repository }}"
+
+      - name: Check out repository code and clone
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Run test for all python tests files
+        run: python -m unittest
+
+
