@@ -1,0 +1,6 @@
+# Coding environment
+.vscode
+
+# Python related
+**/*/__pycache__
+.venv
